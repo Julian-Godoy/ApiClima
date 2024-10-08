@@ -10,7 +10,10 @@ import java.util.List;
 public interface WeatherServiceImplements {
 
     List<GeolocationDTO> getByCityName(String city);
+
     WeatherResponseDTO getCurrentWeather(String city);
+
     ForecastResponseDTO get5DayForecast(String city);
+
     PollutionResponseDTO getAirPollution(String city, double lat, double lon);
 }
