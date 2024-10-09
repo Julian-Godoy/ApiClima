@@ -7,10 +7,8 @@ import java.util.Map;
 public class GeolocationDTO {
 
     private String name, country, state;
-
     private Map<String, String> local_names;
-
-    private double lat, lon;
+    private double Lat, Lon;
 
     //private CoordDTO coord;
 

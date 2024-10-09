@@ -6,6 +6,5 @@ import lombok.Data;
 @Data
 
 public class CloudsDTO {
-
     private int all;
 }

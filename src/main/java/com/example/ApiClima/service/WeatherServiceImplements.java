@@ -16,4 +16,7 @@ public interface WeatherServiceImplements {
     ForecastResponseDTO get5DayForecast(String city);
 
     PollutionResponseDTO getAirPollution(String city, double lat, double lon);
+    void clearCacheWeather();
+    void clearCacheForecast();
+    void clearCacheGeolocation();
 }

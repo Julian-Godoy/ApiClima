@@ -19,6 +19,11 @@ public class WeatherResponseDTO {
     private long dt;
     private long timezone;
     private int cod;
+    private SysDTO sys;
+    private MainDTO main;
+    private CloudsDTO clouds;
+    private WindDTO wind;
+    private String name;
 
 
 }

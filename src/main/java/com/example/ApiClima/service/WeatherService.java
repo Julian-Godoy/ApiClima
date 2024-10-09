@@ -33,9 +33,7 @@ public class WeatherService implements WeatherServiceImplements{
 
     @Override
     public List<GeolocationDTO> getByCityName(String city) {
-        System.out.println(city);
         String geo_url = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + apiKey;
-        System.out.println(geo_url);
         ResponseEntity<String> response = restTemplate.getForEntity(geo_url, String.class);
         ObjectMapper objectMapper = new ObjectMapper();
         List<GeolocationDTO> geolocationDTO = null;
@@ -51,7 +49,7 @@ public class WeatherService implements WeatherServiceImplements{
 
     @Override
     @Cacheable(value = "weatherCache")
-    public WeatherResponseDTO getWeatherByCityName(String city) {
+    public WeatherResponseDTO getCurrentWeather(String city) {
         String url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
@@ -96,6 +94,21 @@ public class WeatherService implements WeatherServiceImplements{
             throw new RuntimeException(e);
         }
         return pollutionResponseDTO;
+    }
+
+    @Override
+    public void clearCacheWeather() {
+
+    }
+
+    @Override
+    public void clearCacheForecast() {
+
+    }
+
+    @Override
+    public void clearCacheGeolocation() {
+
     }
 
 }

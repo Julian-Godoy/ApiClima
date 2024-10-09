@@ -38,9 +38,11 @@ public class WebConfig {
 
                 .authorizeHttpRequests(authorize -> // request  se encarga de especificar el método http autorizar y su ruta
                         authorize
-                                .requestMatchers("/my-project/**").permitAll()
-                                .requestMatchers( "/login").permitAll()
+                                //.requestMatchers("/my-project/**").permitAll()
+                                //.requestMatchers( "/login").permitAll()
                                 .requestMatchers( HttpMethod.GET,"/api/**").permitAll()
+                                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/client/register").permitAll()
 
                                 .anyRequest().authenticated()
                 )

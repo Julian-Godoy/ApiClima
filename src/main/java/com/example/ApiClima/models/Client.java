@@ -24,8 +24,7 @@ public class Client {
     public Client() {
     }
 
-    public Client(long id, String name, String last_name, String email, String password) {
-        this.id = id;
+    public Client(String name, String last_name, String email, String password) {
         this.name = name;
         this.last_name = last_name;
         this.email = email;
